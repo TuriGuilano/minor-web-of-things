@@ -1,0 +1,25 @@
+{
+  "name": "new-nodemcu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "upload": "nodemcu-tool upload --port=/dev/cu.SLAB_USBtoUART --optimize ./arduino/config.lua && nodemcu-tool upload --port=/dev/cu.SLAB_USBtoUART --optimize ./arduino/init.lua && nodemcu-tool upload --port=/dev/cu.SLAB_USBtoUART --optimize ./arduino/wifimodule.lua && nodemcu-tool upload --port=/dev/cu.SLAB_USBtoUART --optimize ./arduino/websocket.lua",
+    "kickstartmcu": "npm run upload && nodemcu-tool --port=/dev/cu.SLAB_USBtoUART run init.lua",
+    "startmcu": "nodemcu-tool --port=/dev/cu.SLAB_USBtoUART run init.lua",
+    "expose": "ngrok http 3000",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ngrok": "^2.2.6"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^1.7.3"
+  }
+}

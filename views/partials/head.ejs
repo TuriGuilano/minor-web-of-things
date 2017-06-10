@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web of things</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+	<script type="text/javascript" src="/js/build.js" defer></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<script>
+  var ws = new WebSocket('ws://107.170.14.163:80');
+
+	ws.addEventListener('open', () => {
+		console.log('Connected!');
+	})
+
+	ws.addEventListener('message', (message) => {
+		console.log(message);
+	})
+</script>

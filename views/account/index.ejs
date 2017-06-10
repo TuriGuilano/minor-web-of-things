@@ -1,0 +1,32 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+
+	<div class="form-block fadeIn">
+		<img class="logo-small" src="/img/island.png">
+		<h2><%= data.username %></h2>
+		<form class="form" id="create-island-form" method="post" action="/account/update">
+			<label class="radio-list">
+			<input type="radio" name="type" value="junior" <% if(data.type == "junior") { %> checked="true" <% } %> required />
+			Junior
+		</label>
+			<label class="radio-list">
+			<input type="radio" name="type" value="senior" <% if(data.type == "senior") { %> checked="true" <% } %> required />
+			Senior
+		</label>
+			<label>
+			BoxID
+			<input class="account-input" type="text" name="boxId" value="<%= data.boxId %>" required />
+		</label>
+			<label>
+			Color
+			<input class="account-input" type="color" name="color" value="<%= data.color %>" required />
+		</label>
+
+			<input type="submit" value="Sla op" />
+		</form>
+
+		<a href="/account/logout">Uitloggen</a>
+	</div>
+
+	<%- include('../partials/head.ejs') %>
