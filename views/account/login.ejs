@@ -1,0 +1,18 @@
+<%- include('../partials/head.ejs') %>
+
+<div class="form-block">
+  <img class="logo-small" src="/img/island.png">
+  <h1>Inloggen</h1>
+
+  <form class="form" method="post">
+    <label for="log_username">Gebruikersnaam</label>
+    <input type="text" name="username" id="log_username" required />
+
+    <label for="log_password">Password</label>
+    <input type="password" name="password" id="log_password" required />
+    <input type="submit" value="Inloggen" />
+  </form>
+
+  <a href="/account/register">Maak een nieuw account aan</a>
+</div>
+<%- include('../partials/foot.ejs') %>

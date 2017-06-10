@@ -1,0 +1,45 @@
+<%- include('../partials/head.ejs') %>
+
+	<div class="form-block large fadeIn">
+		<img class="logo-small" src="/img/island.png">
+		<h2>Create an Island</h2>
+
+		<form id="create-island-form" class="form" method="post" action="/islands/create">
+			<h4>1. Basic Information</h4>
+			<label>
+				Name:
+				<input type="text" name="name" required />
+			</label>
+
+			<label>
+				Description:
+				<textarea type="text" name="description" required placeholder="A short description about the Island"></textarea>
+			</label>
+
+			<h4>2. Select Senior</h4>
+			<% for(i=0; i<users.length; i++) {
+				if(users[i].type == "senior") { %>
+
+					<label class="radio-list">
+						<input type="radio" name="senior" value="<%= users[i].username %>">
+						<span><%= users[i].username + " (" + users[i].type + ")" %></span>
+					</label>
+			<% }} %>
+
+			<h4>3. Select Juniors</h4>
+			<% for(i=0; i<users.length; i++) {
+				if(users[i].type == "junior") { %>
+
+
+						<label class="checkbox-list">
+							<input type="checkbox" name="juniors" value="<%= users[i].username %>">
+							<span><%= users[i].username %></span>
+						</label>
+
+				<% }} %>
+
+			<input type="submit" value="Save" />
+		</form>
+	</div>
+
+	<%- include('../partials/head.ejs') %>

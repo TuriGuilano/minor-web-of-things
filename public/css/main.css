@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+* {
+	font-family: 'Raleway', sans-serif;
+}
+
+body {
+	background: #56ccf2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #56ccf2, #2f80ed); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #56ccf2, #2f80ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav.nav-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	// height: 2em;
+	background-color: #fff;
+	width: 100%;
+
+}
+
+/* push div under fixed nav down a bit */
+nav.nav-bar + * {
+	margin-top: 10em;
+}
+
+nav.nav-bar ul {
+	float: right;
+	margin: 0;
+	padding: 1em;
+}
+
+nav.nav-bar li {
+	display: inline;
+	margin-right: 2em;
+}
+
+a {
+	color: deepskyblue;
+}
+
+a:focus, a:hover {
+	color: skyblue;
+}
+
+.logo {
+	display: block;
+	height: 10em;
+	margin: 0 auto 1em;
+}
+
+.logo-small {
+	display: block;
+	height: 7em;
+	margin: -6em auto 0;
+}
+
+.login-btn {
+	background-color: red;
+	padding: 1em;
+	width: 6em;
+	margin: 1em auto;
+	border-radius: 5px;
+	color: white;
+	transition: 0.3s;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.login-btn:focus, .login-btn:hover {
+	color: white;
+	background-color: crimson;
+	transition: 0.3s;
+}
+
+/* Intro Page */
+
+.container {
+	background-image: url(../img/banner.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20em;
+	margin-top: -2em;
+	padding: 5em 0;
+}
+
+.container h1 {
+	color: white;
+	text-align: center;
+	margin-top: 4em;
+	font-size: 300%;
+}
+
+
+/* Login form */
+
+.form-block {
+	width: 20em;
+	min-width: 17em;
+	min-height: 6em;
+	background-color: #fff;
+	padding: 2em;
+	margin: 5em auto;
+	-webkit-box-shadow: 0px 10px 37px -16px rgba(0, 0, 0, 0.50);
+	-moz-box-shadow: 0px 10px 37px -16px rgba(0, 0, 0, 0.50);
+	box-shadow: 0px 10px 37px -16px rgba(0, 0, 0, 0.50);
+}
+
+.large {
+	width: 30em;
+}
+
+.form-block h1, .form-block h2 {
+	text-align: center;
+	color: #3C9BD4;
+}
+
+.form-block h4 {
+	color: #3C9BD4;
+}
+
+.form-block a {
+	text-decoration: none;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form label, .form input {
+	margin-bottom: 0.5em;
+}
+
+.form label {
+	font-size: 70%;
+	display: flex;
+	flex-direction: row;
+}
+
+.form label.choice-label {
+	border: 0.1em #57C0C9 solid;
+	padding: 1em;
+	display: block;
+	text-align: center;
+	width: auto;
+	cursor: pointer;
+}
+
+.form label.choice-label:hover, .form label.choice-label:focus {
+	background-color: #57C0C9;
+	color: #ffffff;
+}
+
+.form input[type="radio"].choice-input {
+	position: absolute;
+	left: -99em;
+	opacity: 0;
+}
+
+.form input[type="radio"]:checked+label.choice-label {
+	background-color: #57C0C9;
+	color: #ffffff;
+}
+
+.form label.id-input {
+	margin-top: 2em;
+}
+
+.form .account-input {
+	display: block;
+	min-width: 19em;
+	margin: 0.5em 0 0.5em;
+}
+
+.form input {
+	padding: 0.7em;
+	border: 1px solid lightgrey;
+}
+
+.form input[type="submit"], .create-island-btn {
+	text-transform: uppercase;
+	padding: 1em 0;
+	margin: 1em 0;
+	background-color: #57C0C9;
+	border: none;
+	color: white;
+	transition: 0.3s;
+}
+
+.form input[type="submit"]:focus, .form input[type="submit"]:hover, .create-island-btn:focus, .create-island-btn:hover {
+	cursor: pointer;
+	background-color: #3AAAB3;
+	transition: 0.3s;
+}
+
+.form-block a {
+	display: block;
+	text-align: center;
+	font-size: 70%;
+}
+
+
+/* Island Pages */
+
+.island-list {
+	-webkit-padding-start: 0;
+}
+
+.island-list li {
+	font-size: larger;
+	padding: 0.5em 0 0.5em;
+	list-style-type: none;
+	background-image: url(../img/palm.png);
+	background-position: 0 0;
+	background-size: 1.6em 1.6em;
+	background-repeat: no-repeat;
+}
+
+#create-island-form label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.5em;
+}
+
+#create-island-form textarea {
+	outline: none;
+	border: 1px solid lightgrey;
+	resize: none;
+	box-sizing: border-box;
+	height: 5em;
+	padding: 0.8em;
+}
+
+#create-island-form input[type="radio"], #create-island-form input[type="checkbox"] {
+	margin-right: 1em;
+}
+
+label.radio-list, label.checkbox-list {
+	display: flex;
+	flex-direction: row!important;
+}
+
+label.radio-list:hover, label.checkbox-list:hover {
+	cursor: pointer;
+}
+
+.fadeIn {
+	animation-duration: .3s;
+	animation-fill-mode: both;
+	animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}

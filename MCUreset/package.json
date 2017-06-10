@@ -1,0 +1,26 @@
+{
+  "name": "mcureset",
+  "version": "1.0.0",
+  "description": "reset-package",
+  "main": "./app.js",
+  "scripts": {
+    "test": "console.log('gains');",
+    "clone": "git clone https://github.com/themadinventor/esptool.git && git clone https://github.com/TuriGuilano/lua.git",
+    "espinstall": "sudo python ./esptool/setup.py install",
+    "nodemcutool": "sudo npm install nodemcu-tool -g",
+    "firmwarereset": "python ./esptool/esptool.py --port /dev/cu.SLAB_USBtoUART write_flash 0x00000 ./lua/nodemcu-1.5.4.1-final-12-modules-2017-04-12-14-51-54-integer.bin",
+    "wifi": "nodemcu-tool upload --port /dev/cu.SLAB_USBtoUART --optimize ./lua/wifimodule.lua",
+    "init": "nodemcu-tool upload --port /dev/cu.SLAB_USBtoUART --optimize ./lua/init.lua",
+    "mcusetup": "npm run clone && npm run espinstall && npm run nodemcutool && npm run firmwarereset && npm run wifi && npm run init && nodemcu-tool --port=/dev/cu.SLAB_USBtoUART run init.lua"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveBitter/minor-webdev_web-of-things.git"
+  },
+  "author": "ioannis&cohort",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaveBitter/minor-webdev_web-of-things/issues"
+  },
+  "homepage": "https://github.com/DaveBitter/minor-webdev_web-of-things#readme"
+}
